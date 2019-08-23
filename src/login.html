@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form id="loginForm" name="loginForm" method="post" action="">
+  <table width="1000" height="454" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+    <tbody>
+    <tr>
+      <td width="247" height="227" valign="top"
+          background="http://my.hfut.edu.cn/images/hefei_04.jpg">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+          <tr>
+            <td width="21%" height="30" align="right" class="text">用户名：</td>
+            <td colspan="2"><input name="user" type="text" id="username" size="18" style="height:18px;" tabindex="1"
+                                   class="required min-length-1"></td>
+          </tr>
+          <tr>
+            <td height="30" align="right" class="text">密 &nbsp;&nbsp;码：</td>
+            <td colspan="2"><input name="pwd" type="password" id="password" size="18" style="height:18px;" tabindex="2"
+                                   class="required min-length-1"></td>
+          </tr>
+          <tr id="captchaContent1">
+            <td height="30" align="right" class="text">验证码：</td>
+            <td width="35%"><input name="captcha" type="text" id="code" size="18" style="height:18px; width:75px;"
+                                   tabindex="3" class="required min-length-4 validate-ajax-captchaValidate.portal"></td>
+            <td width="44%" valign="top" id="captchaContentTD"></td>
+          </tr>
+          </tbody>
+        </table>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+          <tr>
+            <td height="5" colspan="4"></td>
+          </tr>
+          <tr>
+            <td width="8%" align="left" valign="middle"><input type="checkbox" name="remember" id="remember"></td>
+            <td width="30%" align="left" valign="middle" class="text">记住用户名</td>
+            <td width="43%" align="left" valign="middle" class="link2"><a href="getPasswordChangeLinkByMail.portal"
+                                                                          class="link2" target="_blank">找回密码</a></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="4"></td>
+          </tr>
+          </tbody>
+        </table>
+        <input type="submit" name="btn" value="      " tabindex="4" style="border-width:0;width:83px;height:28px;background-image:url(http://my.hfut.edu.cn/login/images/denglu.jpg);
+			cursor:pointer;/*margin-left:-20px;*/"><input id="place1" tabindex="5" type="reset" value=" "
+                                                    style="border-width:0;width:84px;height:28px;background-image:url(http://my.hfut.edu.cn/login/images/chongzhi.jpg);cursor:pointer; margin-left:50px;">
+        <table width="100%" border="0">
+
+
+        </table>
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+          <tr>
+            <td height="1" class="text"></td>
+            <td colspan="3" class="text">
+              <div id="loginMsg"
+                   style="visibility:hidden;float:left;margin-left:5px;*margin-left:2px;*margin-top:5px;"></div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</form>
+<script type="text/javascript">var Login = {
+  forwardUrl: '',
+  loginURL: 'http://my.hfut.edu.cn/userPasswordValidate.portal',
+  nameField: 'Login.Token1',
+  pwdField: 'Login.Token2',
+  gotoUrl: 'http://my.hfut.edu.cn/loginSuccess.portal',
+  gotoFailUrl: 'http://my.hfut.edu.cn/loginFailure.portal',
+  hideCaptcha: true
+};
+
+document.getElementById("captchaContentTD").innerHTML = '<img id="captchaImg" src="http://my.hfut.edu.cn/captchaGenerate.portal?s=' + Math.random() + '" width = "52"  height = "25" align = "absmiddle" > ';
+document.write('<script src="./js/login.js?t=' + new Date() + '"><\/script>');
+</script>
+
+</body>
+</html>
